@@ -1,7 +1,8 @@
-const consoleOutput = document.getElementById('console-output')
 const consoleInput = document.getElementById('console-input')
 const goalDis = document.getElementById('goal')
 const titleDisplay = document.getElementById('titleDis')
+const levelDisplay = document.getElementById('lDis')
+
 
 let lIndex = 1;
 
@@ -38,7 +39,6 @@ consoleInput.addEventListener('keydown', (event) => {
 
     if(!flag)
     {
-        consoleOutput.value += ">> Oops! There's Something wrong with your code\n"
         console.log(lIndex)
     }
     consoleInput.value = '';
@@ -61,4 +61,5 @@ function UpdateDisplays()
 {
     goalDis.innerHTML = goals[lIndex]
     titleDisplay.innerHTML = title[lIndex]
+    levelDisplay.innerHTML = 'Level ' + lIndex.toString() + ' of 32'
 }

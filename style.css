@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    transition: .4s;
     font-family: 'Ysabeau', sans-serif;
     /* user-select: none; */
 }
@@ -11,7 +10,7 @@
 body
 {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     width: 100vw;
     height: 100vh;
 }
@@ -19,14 +18,34 @@ body
 #gameSec
 {
     height: inherit;
-    background-color: blue;
+    background-color: #313131;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
+
+#gameSec #codeArea
+{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+#codeArea input[type='text']
+{
+    border: none;
+    padding-left: 1rem;
+    width: 50%;
+    height: 10rem;
+}
+
 
 #sidebar
 {
     background-color : #242424;
     color: #c0c0c0;
     padding: 1rem;
+    width: 100%;
 }
 
 #sidebar #titleDis
@@ -44,4 +63,14 @@ body
     margin-top: .4rem;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 600;
+}
+
+#codeB
+{
+    /* padding: .5rem; */
+    margin-top: 100rem;
+    /* border: 1px solid rgb(173, 173, 173); */
+    /* background-color: #313131; */
+    /* font-family: 'Courier Prime', monospace; */
+    text-align: center;
 }
