@@ -1,6 +1,7 @@
 const consoleOutput = document.getElementById('console-output')
 const consoleInput = document.getElementById('console-input')
 const goalDis = document.getElementById('goal')
+const titleDisplay = document.getElementById('titleDis')
 
 let lIndex = 1;
 
@@ -12,6 +13,11 @@ let goals = {
 let sols = {
     '1': ['document.getElementById("cookie")', 'document.getElementById("cookie");'],
     '2' : ['document.getElementByClassName("cookie")', 'document.getElementByClassName("cookie");' ]
+}
+
+let title = {
+    '1':'Retrieve Element using ID',
+    '2':'Retrieve Element using ClassName'
 }
 
 consoleInput.addEventListener('keydown', (event) => {
@@ -48,10 +54,11 @@ function LevelPassed()
         lIndex += 1;
     }
     console.log(lIndex)
-    UpdateGoalDis()
+    UpdateDisplays()
 }
 
-function UpdateGoalDis()
+function UpdateDisplays()
 {
     goalDis.innerHTML = goals[lIndex]
+    titleDisplay.innerHTML = title[lIndex]
 }
