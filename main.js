@@ -3,29 +3,12 @@ const goalDis = document.getElementById('goal')
 const titleDisplay = document.getElementById('titleDis')
 const levelDisplay = document.getElementById('lDis')
 const topicDis = document.getElementById('A')
+const ExamplesDis = document.getElementById('exs')
+const infoDis = document.getElementById('info')
 
 
 let lIndex = 1;
 
-let topic = {
-    '1' : 'document.getElementByID("elementID")',
-    '2' : 'document.getElementsByClassName("classNames")'
-}
-
-let goal = {
-    '1' : 'Select the Cookie',
-    '2' : 'Select the Cookies'
-}
-
-let sols = {
-    '1': ['document.getElementById("cookie")', 'document.getElementById("cookie");'],
-    '2' : ['document.getElementByClassName("cookie")', 'document.getElementByClassName("cookie");' ]
-}
-
-let title = {
-    '1':'Retrieve Element using ID',
-    '2':'Retrieve Element using ClassName'
-}
 
 consoleInput.addEventListener('keydown', (event) => {
   if (event.key === '`') {
@@ -50,20 +33,39 @@ consoleInput.addEventListener('keydown', (event) => {
   }
 });
 
-
-function LevelPassed()
+function previousLevel()
 {
-    if(lIndex < Object.keys(goal).length)
+    if(lIndex > 1)
+    {
+        lIndex -=1;
+    }
+    UpdateDisplays();
+}
+
+function nextLevel()
+{
+    if(lIndex < number_of_Levels)
     {
         lIndex += 1;
     }
-    UpdateDisplays()
+    UpdateDisplays();
+}
+//To mark level as done
+function LevelPassed()
+{
+    if(lIndex < number_of_Levels)
+    {
+        lIndex += 1;
+    }
+    UpdateDisplays();
 }
 
 function UpdateDisplays()
 {
-    goalDis.innerHTML = goal[lIndex]
-    titleDisplay.innerHTML = title[lIndex]
-    levelDisplay.innerHTML = 'Level ' + lIndex.toString() + ' of 32'
-    topicDis.innerHTML = topic[lIndex]
+    goalDis.innerHTML = goal[lIndex];
+    titleDisplay.innerHTML = title[lIndex];
+    levelDisplay.innerHTML = 'Level ' + lIndex.toString() + ' of 32';
+    topicDis.innerHTML = topic[lIndex];
+    ExamplesDis.innerHTML = ex[lIndex];
+    infoDis.innerHTML = inf[lIndex];
 }
